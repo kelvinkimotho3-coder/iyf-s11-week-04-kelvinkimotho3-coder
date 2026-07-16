@@ -74,3 +74,66 @@ const yearTurning100 = currentYear + (100 - myAgeYears);
 console.log(`Age in days: ${ageInDays}`);
 console.log(`Age in hours: ${ageInHours}`);
 console.log(`Year I turn 100: ${yearTurning100}`);
+
+// Exercise 1: Function Declarations
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+const add = function(a, b) {
+    return a + b;
+};
+
+const multiply = (a, b) => a * b;
+
+const divide = (a, b) => {
+    if (b === 0) {
+        return "Cannot divide by zero";
+    }
+    return a / b;
+};
+
+// Exercise 2: Build These Functions
+function calculateArea(width, height) {
+    return width * height;
+}
+
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+}
+
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+function getInitials(fullName) {
+    return fullName
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase())
+        .join("");
+}
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+console.log(calculateArea(5, 10));          // 50
+console.log(celsiusToFahrenheit(0));        // 32
+console.log(isEven(7));                     // false
+console.log(getInitials("John Doe"));       // JD
+console.log(reverseString("hello"));        // olleh
+
+// Exercise 3: Default Parameters
+function greetDefault(name = "Guest", greeting = "Hello") {
+    return `${greeting}, ${name}!`;
+}
+console.log(greetDefault());
+console.log(greetDefault("Alice"));
+console.log(greetDefault("Bob", "Hi"));
+
+// Build: calculateTip
+function calculateTip(bill, tipPercent = 15) {
+    return bill * (tipPercent / 100);
+}
+console.log(calculateTip(100));       // 15
+console.log(calculateTip(100, 20));   // 20
